@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Jost:wght@300&family=Signika:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Jost:wght@300;700&family=Signika:wght@300;400&display=swap');
+
+.sis-code {
+  font-family: "Fredoka One";
+}
+.slogan, .row, #founder {
+  font-family: "Jost";
+}
+
+#founder {
+  font-weight: 200px;
+  text-align: center;
+}
+
+header {
+  font-size: 140%;
+  text-align: center;
+  color: #515151;
+  background: #FFABC9;
+  margin: 0;
+  line-height: 0.2;
+  padding: 5px;
+  background-size: cover;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
