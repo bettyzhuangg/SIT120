@@ -10,7 +10,7 @@
                      v-bind:checked="item.checked"
                     />
               
-              <del class = "gray" v-if="item.checked">
+              <del v-if="item.checked">
                 {{item.text}}
               </del>
               <span v-else>
