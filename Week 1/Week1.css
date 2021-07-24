@@ -1,0 +1,15 @@
+#founder {
+  font-weight: 200px;
+  text-align: center;
+}
+
+header {
+  font-size: 140%;
+  text-align: center;
+  color: #515151;
+  background: #FFABC9;
+  margin: 0;
+  line-height: 0.2;
+  padding: 5px;
+  background-size: cover;
+}
