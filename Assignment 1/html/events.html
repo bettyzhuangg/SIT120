@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- page title -->
+    <title>Events</title>
+    <!-- external css for hamburger menu icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- external css to style the index page -->
+    <link rel="stylesheet" href="../css/eventstyle.css" />
+    <!-- styling for the event page -->
+</head>
+<body>
+    <!-- navigation bar -->
+    <div class="nav-bar" id="nav-bar">
+        <!-- logo on the navigation bar -->
+      <img src="../images/logo.png" class="logo">
+      <!-- navigation links -->
+      <a href="dashboard.html">Dashboard</a>
+      <a href="" class="active">Events</a>
+      <!-- javascript which calls my function used for nav bar responsiveness, prompts hamburger menu -->
+      <a href="javascript:void(0);" class="icon" onclick= "navbarFunc()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="" class="tutorials">Tutorials</a>
+      <!-- profile is hidden and will only appear during responsive stage -->
+      <a href="" class="profile">Profile</a>
+      <!-- prompts back to main page when user clicks logout -->
+      <a href="index.html" class="logout right">Logout</a>
+      <!-- icon for user profile -->
+      <a href="" class="user-head right"><img src="../images/user-head.png" onclick = "clickProfile()"/></a>
+      <!-- search box -->
+      <input
+        type="text"
+        class="search right"
+        name="search"
+        placeholder="Search"
+      />
+      <!-- icon for search box -->
+      <img src="../images/search-icon.png" class="search-icon right" />
+    </div>
+    
+    <!-- container for the entire page content -->
+    <div class = "row">
+        <!-- to be filled out by user to filter the events they wish to see -->
+        <form>
+        <div class = "filter">
+            <!-- filtering for city -->
+            <div class = "city-input">
+                <!-- title for city filter -->
+                <p class = "city-header">City</p>
+                <!-- container is divided into two as it will be displayed side by side -->
+                <!-- left container -->
+                <div class = "left">
+                    <div class = "checkbox">
+                        <input type = "checkbox" id = "sydney" name = "city-input" value = "sydney">
+                        <label for = "sydney" class = "cityname">Sydney</label><br>
+                    </div>
+                    <div class = "checkbox">
+                        <input type = "checkbox" id = "Melbourne" name = "city-input" value = "melbourne">
+                        <label for = "melbourne" class = "cityname">Melbourne</label><br>
+                    </div>
+                    <div class = "checkbox">
+                        <input type = "checkbox" id = "brisbane" name = "city-input" value = "brisbane">
+                        <label for = "brisbane" class = "cityname">Brisbane</label><br>
+                    </div>
+                </div>
+                <!-- right container -->
+                <div class = "right">
+                    <div class = "checkbox">
+                        <input type = "checkbox" id = "canberra" name = "city-input" value = "canberra">
+                        <label for = "canberra" class = "cityname">Canberra</label><br>
+                    </div>
+                    <div class = "checkbox">
+                        <input type = "checkbox" id = "perth" name = "city-input" value = "perth">
+                        <label for = "perth" class = "cityname">Perth</label><br>
+                    </div>
+                    <div class = "checkbox">
+                        <input type = "checkbox" id = "coldcoast" name = "city-input" value = "goldcoast">
+                        <label for = "goldcoast" class = "cityname">Gold Coast</label><br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- filtering events based on dates -->
+            <div class = "dates">
+                <p class = "dates-header">Dates</p>
+                <label for = "from" class = "fromto">From</label> <br>
+                <input type = "date" id = "from" name = "dates"> <br>
+                <label for = "to" class = "fromto">To</label> <br>
+                <input type = "date" id = "to" name = "dates">
+            </div>
+            <!-- submit button -->
+            <input type = "submit" value = "Apply" class = "apply">
+        </div>
+        </form>
+
+        <!-- container for the event display -->
+        <div class = "events">
+            <!-- contaner of the title for the webpage -->
+            <div class = "events-header">
+                <!-- icon for the title -->
+                <img src = "../images/calendericon.png">
+                <!-- the title itself -->
+                <p>Events</p>
+            </div>
+
+            <!-- container for each event -->
+            <div class = "event">
+                <!-- container for thumbnail -->
+                <div class = "event-image">
+                    <!-- the image of the thumbnail -->
+                    <img src = "../images/bootcamp.jpg">
+                </div>
+                <!-- links to external website to describe the event -->
+                <a href="">
+                    <!-- container for the description of event -->
+                <div class = "description" onclick = "newWindow()">
+                    <!-- container for event title -->
+                    <div class = "title">
+                        <p>Coding Bootcamp for Women</p>
+                    </div>
+                    <!-- container for event's date -->
+                    <div class = "date">
+                        <p>29th February 2050 - 29th March 2050</p>
+                    </div>
+                    <!-- container for event's city -->
+                    <div class = "city">
+                        <p>Melbourne, VIC 3000</p>
+                    </div>
+                    <!-- container for event's price -->
+                    <div class = "price">
+                        <p>$1000</p>
+                    </div>
+                </div>
+            </a>
+            <!-- button which prompts the user to get tickets -->
+            <div class = "get-tickets-button">
+                <Button type = "button" onclick = "getTickets()">Get Tickets</Button>
+            </div>
+            </div>
+            <!-- container for each event -->
+            <div class = "event">
+                <!-- container for thumbnail -->
+                <div class = "event-image">
+                    <!-- the image of the thumbnail -->
+                    <img src = "../images/workshop.jpg">
+                </div>
+                <!-- links to external website to describe the event -->
+                <a href="">
+                    <!-- container for the description of event -->
+                <div class = "description" onclick = "newWindow()">
+                    <!-- container for event title -->
+                    <div class = "title">
+                        <p>Coding Workshop for Women</p>
+                    </div>
+                    <!-- container for event's date -->
+                    <div class = "date">
+                        <p>29th February 2050</p>
+                    </div>
+                    <!-- container for event's city -->
+                    <div class = "city">
+                        <p>Melbourne, VIC 3000</p>
+                    </div>
+                    <!-- container for event's price -->
+                    <div class = "price">
+                        <p>Free</p>
+                    </div>
+                </div>
+            </a>
+                <!-- button which prompts the user to get tickets -->
+                <div class = "get-tickets-button">
+                    <Button type = "button" onclick = "getTickets()">Get Tickets</Button>
+                </div>
+            </div>
+
+            <!-- container for each event -->
+            <div class = "event">
+                <!-- container for thumbnail -->
+                <div class = "event-image">
+                    <!-- the image of the thumbnail -->
+                    <img src = "../images/networking.jpg">
+                </div>
+                <!-- links to external website to describe the event -->
+                <a href = "">
+                    <!-- container for the description of event -->
+                <div class = "description" onclick = "newWindow()">
+                     <!-- container for event title -->
+                    <div class = "title">
+                        <p>Networking Event for Women in Tech</p>
+                    </div>
+                    <!-- container for event's date -->
+                    <div class = "date">
+                        <p>29th February 2050</p>
+                    </div>
+                    <!-- container for event's city -->
+                    <div class = "city">
+                        <p>Melbourne, VIC 3000</p>
+                    </div>
+                    <!-- container for event's price -->
+                    <div class = "price">
+                        <p>$50</p>
+                    </div>
+                </div>
+                </a>
+                <!-- button which prompts the user to get tickets -->
+                <div class = "get-tickets-button">
+                    <Button type = "button" onclick = "getTickets()">Get Tickets</Button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- javascript used for responsiveness -->
+  <script src = "../js/main.js"> </script>
+</body>
+</html>

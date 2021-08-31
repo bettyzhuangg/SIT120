@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- external css for hamburger menu icon-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- external css to style the index page -->
+    <link rel="stylesheet" href="../css/dashboardstyle.css" />
+    <!-- title for the page-->
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- container for navigation bar -->
+    <div class="nav-bar" id="nav-bar">
+      <!-- logo on the navigation bar -->
+      <img src="../images/logo.png" class="logo" />
+      <!-- navigation links -->
+      <a href="" class = "active">Dashboard</a>
+      <a href="events.html">Events</a>
+      <!-- javascript which calls my function used for nav bar responsiveness, prompts hamburger menu -->
+      <a href="javascript:void(0);" class="icon" onclick="navbarFunc()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="" class="tutorials">Tutorials</a>
+      <!-- profile is hidden and will only appear during responsive stage -->
+      <a href="" class="profile">Profile</a>
+      <!-- prompts back to main page when user clicks logout -->
+      <a href="index.html" class="logout right">Logout</a>
+      <!-- icon for user profile -->
+      <a href="" class="user-head right"><img src="../images/user-head.png" onclick = "clickProfile()" /></a>
+      <!-- search box -->
+      <input
+        type="text"
+        class="search right"
+        name="search"
+        placeholder="Search"
+      />
+      <!-- icon for search box -->
+      <img src="../images/search-icon.png" class="search-icon right" />
+    </div>
+
+    <!-- container for the entire page content -->
+    <div id="app">
+      <!-- container for the page title -->
+      <div class="page-title">
+        <!-- icon that comes along with the page title -->
+        <img src="../images/dashboardicon.png" />
+        <p>My Dashboard</p>
+      </div>
+
+      <!-- container for first row of the dashboard -->
+      <div class="first-row">
+        <!-- an inner container used to group notif center and ontrack score which will be helpful
+        for responsiveness -->
+        <div class = "inner">
+          <!-- a container which shows users their notifications -->
+          <!-- notification can either be keeping up with ontrack score,
+          or to notify user to watch coding tutorials -->
+          <div class="notif-center">
+            <p>Notification Center</p>
+            <!-- <img src = "../images/notif.png"> -->
+            <notifications v-bind:score = "score"></notifications>
+          </div>
+          <!-- a container which shows the score for how on track the users are
+          with their learning progress -->
+          <div class="ontrack-score">
+            <p>On Track Score</p>
+            <score v-bind:events="events"></score>
+          </div>
+        </div>
+        
+        <!-- a container to let user set their reminders -->
+        <div class="set-reminder">
+          <label for="event-type">Event</label>
+          <!-- allows the user to choose the event for which they would like to set reminder for -->
+          <select id="event-type" name="event-type" v-model="thisevent">
+            <option value="Networking Event">Networking Event</option>
+            <option value="Coding Bootcamp">Bootcamp</option>
+            <option value="Coding Workshop">Workshop</option>
+            <option value="Online Tutorial">Online Tutorial</option>
+          </select>
+
+          <!-- allows the user to set the date for when they would like to set reminder for -->
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" v-model="thisdate"/>
+
+          <!-- submit button -->
+          <div class = submission>
+            <button v-on:click = "addEvent" type="button" value = "done">submit</button>
+          </div>
+        </div>
+      </div>
+      <!-- container for second row -->
+      <div class="second-row">
+        <!-- container for user's learning progress, will be filled with progress chart -->
+        <div class="learning-progress">
+          <p>Learning Progress</p>
+          <img src = "../images/chart.png">
+        </div>
+        <!-- container for reminder of events or coding tutorials,
+        will be filled with reminders that the users have set themselves -->
+        <div class="reminder">
+          <div class = "remindertitle">
+            <p>Reminder</p>
+          </div>
+          <!-- uses reminder component to display all reminders -->
+          <reminder v-for="x in events"
+              v-bind:date="x.date"
+              v-bind:event="x.event"></reminder>
+        </div>
+      </div>
+    </div>
+    <!-- javascript used for responsiveness -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src = "../js/notifications.js"> </script>
+    <script src = "../js/reminder.js"> </script>
+    <script src = "../js/score.js"> </script>
+    <script src = "../js/main.js"> </script>
+  </body>
+</html>
