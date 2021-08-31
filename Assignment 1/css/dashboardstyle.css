@@ -1,0 +1,411 @@
+/* importing font that will be used in the project */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap");
+
+/* initialize default styling where all margin and padding will be set to 0 */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* default style for the browser */
+body {
+  font-family: "Raleway";
+  background-color: rgb(235, 235, 235);
+}
+
+/* ===================STYLES FOR NAVIGATION BAR STARTS HERE==================== */
+
+/* set the background for navigation bar to purple */
+/* any content outside of the container will be hidde  */
+.nav-bar {
+  background-color: rgba(102, 72, 149, 1);
+  overflow: hidden;
+}
+
+/* style for the logo on the nav bar */
+.nav-bar .logo {
+  float: left;
+  width: 100px;
+  height: 93px;
+  vertical-align: middle;
+}
+
+/* styles clickable links on the navigation bar */
+.nav-bar a {
+  color: white;
+  float: left;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 42px 2.43vw;
+  text-decoration: none;
+}
+
+/* sets all items on the right hand side of the navigation bar to float right */
+.nav-bar .right {
+  float: right;
+}
+
+/* styles the search icon on the navigation bar */
+.nav-bar .search-icon {
+  width: 35px;
+  height: 35px;
+  margin-top: 35px;
+  margin-right: 10px;
+}
+
+/* styles the search bar */
+.nav-bar input[type="text"] {
+  margin-top: 28px;
+  margin-right: 16px;
+  border: none;
+  border-radius: 2%;
+  font-size: 17px;
+  height: 45px;
+  width: 10vw;
+}   
+
+/* styles the container for the user profile icon */
+.nav-bar .user-head {
+  padding: 17px 0;
+}
+
+/* styles the user icon on the navigation bar */
+.nav-bar .user-head img {
+  height: 66px;
+  width: 66px;
+}
+
+/* hides the icon of hamburger menu and user profile icon */
+.nav-bar .icon, .nav-bar .profile {
+  display: none;
+}
+
+/* styling on the navigatable link whose page the user is currently on */
+.nav-bar a.active {
+  background-color: rgb(59, 26, 109);
+  color: white;
+}
+
+/* styling that will take place when user hovers on the link */
+.nav-bar a:hover {
+  background-color: rgb(79, 53, 122);
+}
+
+/* media query which allows the navigation bar to be responsive */
+@media screen and (max-width: 1000px) {
+  /* hides all elements in the nav bar except for the link that is currently active,
+  the logo and the hamburger menu */
+  .nav-bar :not(.active, .logo, .fa) {
+    display: none;
+  }
+
+  /* appears the hamburger menu on the right hand side of the page */
+  .nav-bar a.icon {
+    float: right;
+    display: block;
+  }
+
+  /* sets the position of the icons and blocks at a responsive stage */
+  .nav-bar.responsive {position: relative;}
+  .nav-bar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  /* appears the page redirection button (<a> tag) as blocks */
+  .nav-bar.responsive a,
+  .nav-bar.responsive input,
+  .nav-bar.responsive.profile {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  /* at a responsive stage, hides the icon of the user profile */
+  .nav-bar.responsive a.user-head {
+    display: none;
+  }
+
+  /* styling for the search bar at a responsive stage */
+  .nav-bar.responsive input {
+    width: 100%;
+  }
+}  
+
+/* ===================FINISHED STYLING FOR NAVIGATION BAR=============== */
+
+/* styles page title which are 'my dashboard' and its icon */
+.page-title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 68vw;
+}
+
+/* sets the size for the icon beside the page title */
+.page-title img {
+  width: 90px;
+  height: 90px;
+}
+
+/* styles the wording for the page title */
+.page-title p {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 100%;
+  margin-left: 30px;
+  color: rgba(102, 72, 149, 1);
+}
+
+/* initialize a flex box for both the first row and second row on the dashboard */
+.first-row,
+.second-row {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* sets a default style for all boxes except for set-reminder */
+.notif-center,
+.ontrack-score,
+.set-reminder,
+.learning-progress,
+.reminder {
+  padding-left: 20px;
+  height: 200px;
+  background-color: white;
+  border-radius: 2%;
+  box-shadow: 5px 5px 5px rgb(196, 196, 196);
+}
+
+/* sets the style for notif center and on track score */
+/* the container for those two boxes will be used for responsiveness later */
+.inner {
+  width: 135%;
+  display: flex;
+}
+
+/* sets additional styling for the notif center box */
+.notif-center {
+  width: 100%;
+  margin-left: 1em;
+  margin-right: 0.5em;
+  height: 225px;
+}
+
+/* styles the notifications */
+/* will be replaced with real notifications */
+.notif-center img {
+  width: 20%;
+  margin-top: 50px;
+  position: absolute;
+}
+
+/* styling for notifications */
+.notif-center .notifs{
+  margin-top: 40px;
+  position: absolute;
+  width: 20%;
+}
+
+/* styles the texts of notifications */
+.notif-center .notifs p{
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.notif-center .notifs p.rednotif {
+  background-color: rgb(255, 174, 174);
+  color: rgb(131, 15, 15);
+  border: 1px solid rgb(255, 75, 75);
+}
+
+.notif-center .notifs p.greennotif {
+  background-color: rgb(185, 248, 185);
+  color: rgb(23, 104, 23);
+  border: 1px solid rgb(23, 104, 23);
+}
+
+/* styles the title for all boxes  */
+.notif-center p,
+.ontrack-score p,
+.learning-progress p,
+.remindertitle p {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: rgba(102, 72, 149, 1);
+  position: absolute;
+}
+
+/* additional style for on track score box */
+.ontrack-score {
+  width: 60%;
+  height: 225px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+/* style the score */
+/* will be replaced with real score */
+.ontrack-score .score {
+  margin-top: 20px;
+  font-size: 100px;
+  font-weight: 800;
+}
+
+/* additional styles for set reminder box */
+.set-reminder {
+  width: 75%;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* styles the title for each filter section
+city and dates are both filter sections */
+.set-reminder label {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: 500;
+  color: rgba(102, 72, 149, 1);
+}
+
+/* style the input boxes */
+.set-reminder input,
+.set-reminder select {
+  margin-top: 10px;
+  width: 50%;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+/* style the submit button */
+.submission button {
+  background-color: rgba(102, 72, 149, 1);
+  color: white;
+  height: 30px;
+  width: 5rem;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  font-weight: 300;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* additional styling for the entire second row */
+.second-row {
+  margin-top: 1em;
+}
+
+/* additional styling for the learning progress box */
+.learning-progress {
+  width: 55%;
+  height: auto;
+  margin-left: 1em;
+  margin-right: 0.5em;
+}
+
+/* set the size for the chart */
+/* will be replaced with real chart */
+.learning-progress img {
+  width: 100%;
+  margin-top: 3em;
+}
+
+/* additional styling for reminder box */
+.reminder {
+  width: 45%;
+  height: 350px;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  overflow: scroll;
+}
+
+.remindertitle {
+  height: 50px;
+}
+
+.reminderlist {
+  margin-bottom: 10px;
+}
+
+.reminderlist p{
+  background-color: rgba(102, 72, 149, 1);
+  padding-left: 10px;
+  width: 300px;
+}
+
+.reminderlist .dates {
+  font-size: 12px;
+  padding-top: 3px;
+  border-radius: 5px 5px 0px 0px;
+  font-weight: 100;
+  color: white;
+}
+
+.reminderlist .events {
+  padding-bottom: 3px;
+  border-radius: 0px 0px 5px 5px;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+}
+
+/* set the size for the reminders */
+/* will be replaced with real reminders */
+.reminder img {
+  width: 25%;
+  margin-top: 3em;
+  position: absolute;
+}
+
+.remindertitle p {
+  background-color: white;
+  width: 400px;
+}
+
+/* media query which allows the page to be responsive */
+@media screen and (max-width: 1000px) {
+  .first-row .inner {
+    width: 75%;
+    display: flex;
+  }
+
+  .first-row,
+  .second-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0px auto;
+  }
+  .first-row div, .second-row div {
+    margin: 10px;
+    width: 70vw;
+  }
+
+  .second-row {
+    flex-direction: column-reverse;
+    align-content: center;
+  }
+
+  .ontrack-score p,
+  .learning-progress p,
+  .remindertitle p {
+    font-size: 18px;
+  }
+
+  .notif-center p {
+    font-size: 16px;
+  }
+}
