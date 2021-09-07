@@ -1,0 +1,415 @@
+/* importing font that will be used in the project */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+/* =================STYLING FOR NAVIGATION BAR================= */
+
+/* rest of the content will be invisible if content is overflow */
+.firstpage .nav-bar {
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.6s;
+}
+
+/* sets the logo on the left most of the navigation bar along with its size */
+.firstpage .nav-bar .logo{
+    float: left;
+    width: 100px;
+    height: 93px;
+    vertical-align: middle;
+}
+
+/* styles the direct-able texts or buttons in the navigation bar */
+.firstpage .nav-bar a {
+    float: left;
+    font-weight: 400;
+    color: white;
+    padding: 42px 2.43vw;
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+/* hides the icon of hamburger menu */
+.firstpage .nav-bar .icon {
+    display: none;
+}
+
+/* set background color for the <a> tag, 
+or the button that redirects user to other pages */
+.firstpage .nav-bar a:hover{
+    background-color: grey;
+}
+
+
+/* =================FINISHED STYLING FOR NAVIGATION BAR================== */
+
+/* the default style of browser */
+
+/* styles the first page or the home page */
+/* creates a paralex background */
+
+.firstpage { 
+    background-image: url("../images/background.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    min-width: 480px;
+    height: 100%;
+}
+
+
+/* initialize all contents outside of the body to have 0 margin and padding */
+body,html {
+    font-family: "Raleway";
+    margin: 0;
+    padding: 0;
+}
+
+/* styling for the 'welcome to' text */
+.firstpage .words {
+    margin-top: 100px;
+    margin-left: 5%;
+}
+.firstpage .welcometo {
+    font-weight: 400;
+    font-size: 4rem;
+    margin: 0;
+}
+
+/* styling for the 'sis code' text */
+
+.firstpage .siscode {
+    font-weight: 700;
+    font-size: 7.5rem;
+    margin: 0;
+}
+
+/* styling for the welcome message */
+/* the message which describes sis code */
+
+.firstpage .welcome-message {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 3.7vh;
+}
+
+
+/* styling for the get started button */
+
+.firstpage .get-started button {
+    background-color: white;
+    margin-left: 5%;
+    margin-top: 20px;
+    border: none;
+    padding: 0.7vw 0.6vh;
+    color: rgba(102, 72, 149, 1);
+    font-size: 2.4vh;
+    border-radius: 7%;
+    font-family: "Raleway";
+    cursor: pointer;
+}
+
+/* changes the style of the get started button when user hovers on it */
+.firstpage .get-started button:hover{
+    background-color: rgba(102, 72, 149, 1);
+    color: white;
+}
+
+/* animation for when button is clicked */
+.firstpage .button:active{
+    background-color: rgba(102, 72, 149, 1);
+    color: white;
+    box-shadow: 0 1px rgb(150, 150, 150);
+    transform: translateY(4px);
+}
+
+/* styling for the container of the arrow icon */
+.firstpage .down-arrow{
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+/* styling for the arrow icon which prompts user to scroll down */
+.firstpage .down-arrow img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.2vh;
+    width: 3vh;
+    height: 3vh;
+    animation: jump 1.2s infinite;
+}
+
+/* animation for arrow jumping effect */
+@keyframes jump {
+    0% { transform: translate(0, -50%) scale(1, 1); }
+}
+
+ /* media query which allows welcome page to be responsive */
+  @media only screen and (max-width: 768px),  (max-height: 640px){
+    .firstpage .words {
+      margin-top: 30px;
+      margin-left: 5%;
+    }
+    .firstpage .siscode {
+      font-size: 5rem;
+      text-align: center;
+    }
+    .firstpage .welcometo {
+        font-size: 3rem;
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .firstpage .welcome-message {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: center;
+    }
+    .firstpage .get-started {
+      text-align: center;
+    }
+    .firstpage .get-started button{
+      font-size: 18px;
+      margin-left: 0;
+    }
+  }
+
+/* styling for the second or quiz page */
+
+#secondpage {
+  display: flex;
+}
+
+.decorative-quiz {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  width: 40%;
+}
+
+.decorative-quiz img{
+  width: 85%;
+  border-right: 15px solid white;
+  border-bottom: 15px solid white;
+  border-top: 15px solid white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 8px 5px grey;
+}
+
+.quiz {
+  margin-top: 120px;
+  width: 80%;
+}
+
+.quiz .quiz-title {
+  font-size: 2.8rem;
+  color: black;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+/* styling for the third or testimonial page */
+#thirdpage { 
+    height: 100%; 
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+/* adds sticky navigation bar */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(70, 70, 70);
+  }
+
+  /* changes color when it reaches second page */
+  .sticky1 {
+    background-color: rgba(102, 72, 149, 1);
+  }
+
+  /* changes color when user hovers */
+  .nav-bar.sticky1 a:hover {
+    background-color: rgb(79, 53, 122);
+  }
+
+  /* adds spacing between bar and second page */
+  .sticky + #words {
+    padding-top: 100px;
+  }
+
+  
+  /* Title and Description */
+  
+  .title {
+    font-size: 1.25rem;
+    text-align: center;
+    color: rgba(102, 72, 149, 1);
+    margin: 50px;
+    position: relative;
+  }
+  
+  .title h1 {
+    display: block;
+  }
+  
+  .main {
+    text-align: center;
+  }
+  
+  .page-description {
+    font-size: 1.2rem;
+    color:rgb(91,91,91);
+    margin: 50px;
+  }
+  
+  /* gallery boxes for testimonials */
+  .gallery-box {
+    width: 350px;
+    height: 370px;
+    box-shadow: 5px 5px 8px 5px rgb(221, 221, 221);
+    margin: 30px;
+  }
+  
+  /* styling for quotation mark */
+  .mark {
+    width: 50px;
+    margin-top: -25px;
+    margin-left: -150px;
+    position: absolute;
+  }
+
+  /* sets the layout for the overall testimonials */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* adds spacing between testimonial */
+  .gallery-item {
+    margin: 20px;
+  }
+  
+  /* styling for thumbnail */
+  .gallery-item .thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+  /* styling for description */
+  .gallery-item p {
+    color:rgb(91,91,91);
+    margin: 20px;
+  }
+  
+  /* styling for name of reviewer */
+  .gallery-item .testimonial-name {
+    color:black;
+    margin-top: 40px;
+    font-weight: 600;
+  }
+  
+  /* styling for year */
+  .gallery-item .alumni-year {
+    font-style: italic;
+    color:rgb(91,91,91);
+  }
+
+  /* media query which allows navigation bar to be responsive */
+
+  @media screen and (max-width: 1000px) {
+    /* hides everything in the navigation bar except for logo */
+  .firstpage .nav-bar :not(.logo, .fa) {display: none;}
+  /* appears the hamburger menu icon and set it to the right hand side */
+  .firstpage .nav-bar a.icon {
+    float: right;
+    display: block;
+  }
+
+  /* sets the position of the icons and blocks at a responsive stage */
+  .firstpage .nav-bar.responsive {position: relative;}
+  .firstpage .nav-bar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  /* appears the page redirection button (<a> tag) as blocks */
+  .firstpage .nav-bar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .sticky {
+    position: absolute;
+  }
+}
+  
+/* media query which helps the testimonial section to be responsive */
+@media only screen and (max-width: 480px), (orientation: portrait) {
+  .page-title {
+    width: 270px;
+  }
+}
+  
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .gallery-item .thumbnail {
+    width: 95%;
+  }
+}
+
+/* styling for mentor page */
+
+#forthpage {
+  background-color: rgb(235, 235, 235);
+}
+
+#forthpage img {
+  width: 50%;
+}
+
+/* adding responsiveness for quiz page */
+@media screen and (max-width: 1000px) {
+  .decorative-quiz {
+    display: none;
+  }
+
+  .quiz {
+    width: 100%;
+  }
+
+  .quiz .quiz-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* adding responsiveness for mentor page */
+@media screen and (max-width: 1000px) {
+  .mentortitle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.8rem !important;
+  }
+
+  #forthpage p {
+    font-size: 0.8rem;
+  }
+}
+
+/* styling for footer */
+
+#footer {
+    background-color: rgba(102, 72, 149, 1);
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    padding: 10px;
+}
