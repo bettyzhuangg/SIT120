@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <!-- imports external css style sheet -->
+        <link href = "Week1.css" rel = "stylesheet" type = "text/css">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    </head>
+    <body>
+    <header>
+        <!-- a heading -->
+        <div class = "sis-code">
+            <h1>SIS CODE</h1>
+        </div>
+
+        <!-- creates a slogan below the heading -->
+        <div class = "slogan">
+            <p>Empowering our sisters through technology</p>
+        </div>
+    </header>
+    <article>
+        <!-- creates one big row -->
+        <div class="row">
+            <!-- first column -->
+        <div class="column" style="float:center;">
+        <section id = "introduction">
+            <h3>We are on a mission to close the gender gap within IT by teaching coding to women, 
+           getting women into the beauty of programming, and building an empire for women in technology. 
+           Most importantly, we believe, women can be empowered by technology!</h3>
+        </section>
+        </div>
+        <!-- second column -->
+        <div class="column">
+        <section id = "subscription">    
+            <!-- creates a form -->
+            <form id = "form">
+                <h3>Subscribe to our newsletter</h3>
+                <label for = "name">Name:</label>
+                <input type = "text" id = "name" name = "name" required>
+                <br>
+                <label for = "email">Email:</label>
+                <input type = "text" id = "email" name = "email" required>
+                <br>
+                <label for = "phone">Phone:</label>
+                <input type = "text" id = "phone" name = "phone" required>
+                <br>
+                <label for = "marketing">Where did you hear about us?:</label>
+                <!-- required keyword requires users to input otherwise form cannot be submitted -->
+                <input list = "heard-from" id = "marketing" name = "marketing" onchange = NewsletterChoice(this.value) required>
+                <!-- creates a drop down list -->
+                    <datalist id = "heard-from">
+                        <option value = "Facebook">
+                        <option value = "LinkedIn">
+                        <option value = "Instagram">
+                        <option value = "University">
+                        <option value = "Others">
+                    </datalist> <br>
+                <textarea id="txtOther" class = "txtOther" rows = "4" cols = "30" style='display:none;' required>
+                    <!-- hidden until user chooses others -->
+                </textarea>
+                <br class = "txtOther" style='display:none; text-align: center;'>
+                <hr>
+                <!-- creates a submit button -->
+                <input type="submit" value = "SUBSCRIBE"></button>
+            </form>
+        </section>
+        </div>
+        </div>
+
+        <!-- creates another row -->
+        <div id = "secondrow">
+            <!-- first column of this second row -->
+            <div class = "firstcolumn">
+                <!-- strong tag creates bolded words -->
+            <p><strong>Here are the things you can do with Sis Code</strong></p>
+            <div>
+                <!-- creates a table -->
+                <table>
+                    <tr>
+                      <th>Events</th>
+                      <th>Description</th> 
+                      <th>When</th>
+                    </tr>
+                    <tr>
+                      <td><strong>Coding Bootcamp</strong></td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dictum. Egestas erat imperdiet sed euismod nisi porta lorem. Ac placerat vestibulum lectus mauris ultrices. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.</td>
+                      <td>30 August 2021</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Coding Workshop</strong></td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dictum. Egestas erat imperdiet sed euismod nisi porta lorem. Ac placerat vestibulum lectus mauris ultrices. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.</td>
+                      <td>1 September 2021</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+
+            <!-- second column of the second row -->
+            <div class = "secondcolumn">
+                <p><strong>Here are the things you should start doing:</strong></p>
+                <!-- creates an ordered list -->
+                <ol>
+                    <li>Join us</li>
+                    <li>Book an event</li>
+                    <li>Start learning to code</li>
+                    <li>Build your own projects</li>
+                  </ol>
+            </div>
+
+            <!-- third column of the third row -->
+            <div class = "thirdcolumn">
+                <p><strong>Photo of the day</strong></p>
+                <!-- input a photo -->
+                <img src = "https://source.unsplash.com/random">
+            </div>
+        </div>
+
+        <!-- creates third row -->
+        <div id = "thirdrow" style = "font-family: 'Jost';">
+            <div class = "firstcolumn">
+                <h3>You can calculate the average of 3 student numbers from here!</h3>
+                <!-- prompts user to input the number of student, enter their scores and display the average score -->
+                <button onclick="show_prompt()">Try it</button>
+            </div>
+            <div class = "secondcolumn">
+                <h3>What is today's date?</h3>
+                <!-- shows the date when user clicks on it -->
+                <button onclick="show_date()">Check here</button>
+            </div>
+            <section id = "app" class = "thirdcolumn">
+                <!-- vue instance which creates a to-do list -->
+                <h1>{{title}}</h1>
+                <div v-for = "item in list">
+                    <!-- uses event listener and data binding -->
+                  <input class = "checklist" 
+                         type = "checkbox" 
+                         v-on:change="toggle(item)"
+                         v-bind:checked="item.checked"
+                        />
+                  <!-- conditional rendering -->
+                  <del v-if="item.checked">
+                    {{item.text}}
+                  </del>
+                  <span v-else>
+                    {{item.text}}
+                  </span>
+                </div>
+            </section>
+        </div>
+
+        <!-- last section which shows founder of Sis Code -->
+        <div id = "founder">
+            <h2 style = "color: #ff3377;">About our Founder</h2>
+            <br>
+            <div class = "image-container" style = "overflow:hidden">
+            <img src="https://lh3.googleusercontent.com/O85KUPr8x8-bEAV_j-1wSCUPvMsY0oz1jWbWHcZp35HYL7txPe6IxDf14W1LU6LTovbypsu3qZqWma0TiWnAITc3XwfesApNwh2LB8MA0dCbmlh9KZfclAtwmH85rDdXz0IR8BoE2Q=w600-h315-p-k">
+            </div>
+            <p> Ultimate potterhead,
+                but unlike Harry Potter <br>
+                who throws magic around, she wishes to throw influences in the IT industry!.  </p> 
+                <!-- a tag links object to another object -->
+                <!-- blank target property opens a new tab -->
+            <a href="https://www.linkedin.com/in/betty-yuliani-841a681a5/" target="_blank"> <button type = "button">Visit My LinkedIn</button></a>
+        </div>
+    </article>
+    <!-- cdn for vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- calls external javascript -->
+    <script src = "Week1.js"></script>
+    </body>
+</html>
