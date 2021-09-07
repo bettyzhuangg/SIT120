@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- external css for hamburger menu icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- external css to style the index page -->
+    <link rel="stylesheet" href="../css/indexstyle.css"/>
+    <!-- title that will appear on the tab -->
+    <title>Sis Code</title>
+</head>
+<body>
+    <!-- the first page of the website (home page) -->
+    <div class = "firstpage" id = "firstpage">
+        <!-- navigation bar -->
+        <div class="nav-bar" id="nav-bar">
+            <!-- logo on the navigation bar -->
+            <img src="../images/logo.png" class="logo" />
+            <!-- redirection to other pages -->
+            <a href="#firstpage">Home</a>
+            <a href="#secondpage" >Learn</a>
+            <a href="#thirdpage" >Testimonials</a>
+            <a href="#forthpage" >Mentoring</a>
+            <a href="#footer" >Contact Us</a>
+            <a href="" >Register</a>
+            <!-- in the first version of assignment 1, the login button redirects the user to a dashboard -->
+            <!-- dashboard will be the first page that user see when they successfully logged in -->
+            <a href="dashboard.html" >Log In</a>
+            <!-- calls my function when user clicks on the icon -->
+            <!-- used for hamburger menu -->
+            <a href="javascript:void(0);" class="icon" onclick="navbarFunc()">
+                <i class="fa fa-bars"></i>
+              </a>
+          </div>
+          <!-- a container for the 'welcome to' text -->
+        <div class = "words" id = "words">
+            <p class = "welcometo">Welcome to</p>
+            <p class ="siscode">Sis Code</p>
+            <p class = "welcome-message">
+                We are on a mission to close the gender gap <br>
+            within IT by teaching coding to women, getting <br>
+            women into the beauty of programming, and <br>
+            building an empire for women in tech. <br>
+            Most importantly, we believe, women can be <br>
+            <strong>empowered</strong> by technology! <br>
+            Are you ready to start your journey?
+            </p>
+        </div>
+        <!-- container for the button which redirects the user to register themselves -->
+        <div class = "get-started">
+            <button type = "button">Get Started</button>
+        </div>
+        <!-- container for the arrow which has a jumping animation -->
+        <!-- used to prompt user to scroll down -->
+        <div class = "down-arrow">
+            <img src = "../images/arrow.png">
+        </div>
+    </div>
+
+    <!-- container for the quiz page on the webpage -->
+    <div id = "secondpage">
+      <div class = "decorative-quiz">
+        <img src = "../images/computer.jpg">
+      </div>
+      <div class = "quiz">
+        <p class = "quiz-title">Your career with <span style = "color: rgba(102, 72, 149, 1)"> <strong>coding?</strong></span></p>
+        <p class = "description" style= "color: rgba(102, 72, 149, 1); text-align: center; font-weight: 500;">Take a quiz to find out!</p>
+        <div class = "quizbox" style = "text-align: center;">
+          <img src = "../images/quiz.png" onclick = "playQuiz()" style = "width: 80%; ">
+        </div>
+      </div>
+    </div>
+
+    <!-- container for the testimonial page on the webpage -->
+  <div id = "thirdpage">
+  <header>
+    <div class="title">
+      <div class="logo"></div>
+      <!-- title -->
+      <h1>What do they say about us?</h1>
+    </div>
+  </header>
+  <div class="main">
+    <p class="page-description clearfix">
+      <!-- description -->
+      These amazing women have taken the first step towards coding. Have a read at what they say!
+    </p>
+    <!-- container for the entire testimonials -->
+    <div class="gallery">
+      <!-- container for testimonial -->
+      <div class = "gallery-box">
+        <!-- decorative quotation mark -->
+        <img class = "mark" src = "../images/quotation.png">
+        <figure class="gallery-item">
+          <!-- thumbnail image -->
+          <img class="thumbnail" src="../images/portrait.jpg">
+          <p>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. </p>
+            <!-- description for name and year -->
+          <p class = "testimonial-name">Betty Yuliani</p>
+          <p class = "alumni-year">Alumni: 2017</p>
+        </figure>
+      </div>
+      <!-- repeats the same for every testimonial -->
+      <div class = "gallery-box">
+        <img class = "mark" src = "../images/quotation.png">
+        <figure class="gallery-item">
+          <img class="thumbnail" src="../images/portrait.jpg">
+          <p>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. </p>
+          <p class = "testimonial-name">Betty Yuliani</p>
+          <p class = "alumni-year">Alumni: 2017</p>
+        </figure>
+      </div>
+      <!-- repeats the same for every testimonial -->
+      <div class = "gallery-box">
+        <img class = "mark" src = "../images/quotation.png">
+        <figure class="gallery-item">
+          <img class="thumbnail" src="../images/portrait.jpg">
+          <p>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. </p>
+          <p class = "testimonial-name">Betty Yuliani</p>
+          <p class = "alumni-year">Alumni: 2017</p>
+        </figure>
+      </div>
+      <!-- repeats the same for every testimonial -->
+      <div class = "gallery-box">
+        <img class = "mark" src = "../images/quotation.png">
+        <figure class="gallery-item">
+          <img class="thumbnail" src="../images/portrait.jpg">
+          <p>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. </p>
+          <p class = "testimonial-name">Betty Yuliani</p>
+          <p class = "alumni-year">Alumni: 2017</p>
+        </figure>
+      </div>
+      <!-- repeats the same for every testimonial -->
+      <div class = "gallery-box">
+        <img class = "mark" src = "../images/quotation.png">
+        <figure class="gallery-item">
+          <img class="thumbnail" src="../images/portrait.jpg">
+          <p>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. </p>
+          <p class = "testimonial-name">Betty Yuliani</p>
+          <p class = "alumni-year">Alumni: 2017</p>
+        </figure>
+      </div>
+      <!-- repeats the same for every testimonial -->
+      <div class = "gallery-box">
+        <img class = "mark" src = "../images/quotation.png">
+        <figure class="gallery-item">
+          <img class="thumbnail" src="../images/portrait.jpg">
+          <p>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. </p>
+          <p class = "testimonial-name">Betty Yuliani</p>
+          <p class = "alumni-year">Alumni: 2017</p>
+        </figure>
+      </div>
+      <!-- repeats the same for every testimonial -->
+      <div class = "gallery-box">
+        <img class = "mark" src = "../images/quotation.png">
+        <figure class="gallery-item">
+          <img class="thumbnail" src="../images/portrait.jpg">
+          <p>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. </p>
+          <p class = "testimonial-name">Betty Yuliani</p>
+          <p class = "alumni-year">Alumni: 2017</p>
+        </figure>
+      </div>
+      <!-- repeats the same for every testimonial -->
+      <div class = "gallery-box">
+        <img class = "mark" src = "../images/quotation.png">
+        <figure class="gallery-item">
+          <img class="thumbnail" src="../images/portrait.jpg">
+          <p>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. </p>
+          <p class = "testimonial-name">Betty Yuliani</p>
+          <p class = "alumni-year">Alumni: 2017</p>
+        </figure>
+      </div>
+      <!-- repeats the same for every testimonial -->
+      <div class = "gallery-box">
+        <img class = "mark" src = "../images/quotation.png">
+        <figure class="gallery-item">
+          <img class="thumbnail" src="../images/portrait.jpg">
+          <p>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. </p>
+          <p class = "testimonial-name">Betty Yuliani</p>
+          <p class = "alumni-year">Alumni: 2017</p>
+        </figure>
+      </div>
+    </div>
+  </div>
+    </div>
+    <!-- container for the mentor page on the webpage -->
+    <div id = "forthpage" style = "text-align: center; color: rgba(102, 72, 149, 1)">
+      <!-- title of section -->
+      <p class = "mentortitle" style = "font-size: 2.5rem; font-weight: 600; margin-bottom: 0; padding-top: 30px;">
+        We believe, everyone can be a mentor!
+      </p>
+      <!-- description of section -->
+      <p class = "mentordesc" >
+        With 3 simple steps!
+      </p>
+      <!-- image which explains steps -->
+      <img src = "../images/mentorsteps.png">
+      <!-- afterwords -->
+      <p style = "padding-bottom: 20px; margin-bottom: 0; font-weight: 500;">
+        Once your mentor tickets are booked, we will be in contact with you! <br>
+        Shall you have any queries regarding mentoring, contact us <a>here</a>
+      </p>
+    </div>
+
+    <!-- container for footer -->
+    <div id = "footer">
+        <p style = "margin: 0">Email: contactus@siscode.com.au</p>
+        <p style = "margin: 0">Phone Number: 12345678</p>
+    </div>
+    <!-- importing the javascript file -->
+    <script src = "../js/main.js"></script>
+</body>
+</html>
