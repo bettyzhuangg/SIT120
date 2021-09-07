@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <section id = 'app'>
+            <h1>{{title}}</h1>
+            <div v-for = "item in list">
+              <!-- uses event listener and data binding -->
+              <input class = "checklist" 
+                     type = "checkbox" 
+                     v-on:change="toggle(item)"
+                     v-bind:checked="item.checked"
+                    />
+              <!-- conditional rendering -->
+              <del v-if="item.checked">
+                {{item.text}}
+              </del>
+              <span v-else>
+                {{item.text}}
+              </span>
+            </div>
+        </section>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src= "task4.js"></script>
+    </body>
+</html>
