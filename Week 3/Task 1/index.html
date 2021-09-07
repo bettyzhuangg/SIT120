@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "message">
+        <p>This paragraph is for Betty</p>
+        <!-- prompts print name in upper case -->
+       <input type = "button" onclick="printNameUpper('Betty')" value = "Click Me for upper case name">
+       <br>
+        <!-- prompts print name in lower case -->
+       <input type = "button" onclick="printNameLower('Betty')" value = "Click Me for lower case name">
+       <br>
+        <!-- prompts print name vertically -->
+       <input type = "button" onclick="printNameEnter('Betty')" value = "Click Me for vertical name">
+       <br>
+        <!-- prompts print the initial of name  -->
+       <input type = "button" onclick="getInitial('Betty')" value = "Click Me for name's initial">
+       <br>
+        <!-- replaces Betty with Janice -->
+       <input type = "button" onclick="replaceName('Janice')" value = "Click Me to replace name">
+       <br>
+        <!-- combines Betty and Janice -->
+       <input type = "button" onclick="joinWords('Betty', 'Janice')" value = "Click Me to concat names">
+       <br>
+       <!-- turns Betty into [B,e,t,t,y]-->
+       <input type = "button" onclick="toArray('Betty')" value = "Click Me to change name to array">
+       <br>
+    </div>
+    <script src = "main.js"></script>
+</body>
+</html>
