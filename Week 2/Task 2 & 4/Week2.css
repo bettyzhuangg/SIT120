@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Jost:wght@300&family=Signika:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Jost:wght@300;700&family=Signika:wght@300;400&display=swap');
+
+/* class selector which styles font */
+.sis-code {
+  font-family: "Fredoka One";
+}
+
+/* class selector and id selector which styles font */
+.slogan, .row, #founder {
+  font-family: "Jost";
+}
+
+/* id selector which creates a flexbox */
+#introduction {
+  display: flex;
+  justify-content: center;
+}
+
+/* id selector which styles heading width to 70% */
+#introduction h3 {
+  width: 70%;
+}
+
+/* id selector which styles font and aligns text*/
+#founder {
+  font-weight: 200px;
+  text-align: center;
+}
+
+/* class selector which styles font and color of heading */
+.APIs h2 {
+  font-family: "Jost";
+  color: rgb(255, 61, 94);
+}
+
+/* type selector which styles header */
+header {
+  font-size: 140%;
+  text-align: center;
+  color: #515151;
+  background: #FFABC9;
+  margin: 0;
+  line-height: 0.2;
+  padding: 5px;
+  background-size: cover;
+}
+
+/* class selector */
+.column {
+  float: center;
+  text-align: center;
+}
+
+/* id selector */
+#secondrow{
+  width: 100%;
+  height: 550px;
+  font-family: "Jost";
+}
+
+/* id selector */
+#thirdrow {
+  width: 100%;
+  height: 200px;
+  font-family: "Jost";
+}
+
+/* class selectors */
+.firstcolumn, .secondcolumn, .thirdcolumn{
+  text-align: center;
+  width: 33%;
+  float: left;
+}
+
+/* id, class, type selector */
+#secondrow .thirdcolumn img {
+  width: 400px;
+  height: 300px;
+}
+
+
+/* id selector */
+#secondrow{
+  width: 100%;
+  height: 550px;
+  font-family: "Jost";
+}
+
+/* id selector */
+
+#thirdrow {
+  width: 100%;
+  height: 200px;
+  font-family: "Jost";
+}
+
+/* apply styling to 3 classes */
+.firstcolumn, .secondcolumn, .thirdcolumn{
+  text-align: center;
+  width: 33%;
+  float: left;
+}
+
+/* nested selector whenrestyling is applied to second column of second row */
+#secondrow .secondcolumn {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* nested selectors where styling is applied to paragraph of the table */
+#secondrow .secondcolumn p, #secondrow .secondcolumn ol, #secondrow .secondcolumn ul {
+  margin-left: 50px;
+}
+
+/* nested selectors where styling is applied to strong text in second column */
+#secondrow .secondcolumn strong {
+  color: palevioletred;
+  font-size: 24px;
+}
+
+/* nested selectors where styling is applied to first and second column */
+#thirdrow .firstcolumn, #thirdrow .secondcolumn {
+  border-right: 2px solid pink;
+  height: 200px;
+}
+
+/* nested selectors where styling is applied to the image in the third column of second row */
+#secondrow .thirdcolumn img {
+  width: 400px;
+  height: 300px;
+}
+
+/* type selector and styles the table, give it a border */
+table, th, td {
+  border: 3px solid #ff367c;
+  border-collapse: collapse;
+}
+
+/* background color of row in odd index to pink */
+tr:nth-child(odd) {
+  background-color: pink;
+}
+
+/* hides any content that overflows from this container */
+.image-container {
+  overflow: hidden;
+}
+
+/* styles image in this class */
+.image-container img {
+  min-width: 300px;
+  max-width: 30%;
+  height: auto;
+  float: center;
+  border-radius:50%;
+}
+
+/* styles navigation bar */
+#nav-bar {
+  background-color:indianred;
+  text-align:center;
+  font-family: "Jost";
+}
+
+/* styles text navigation bar */
+#nav-bar a{
+  color: white;
+  padding: 0 3rem;
+  text-decoration: none;
+}
+
+/* styles when tex in navigation bar is hovered on*/
+#nav-bar a:hover{
+  background-color:white;
+  color: #ff367c;
+}
+
+/* creates a magic illustration where text is enlarged */
+.magic {
+  transition: font-size 1s;
+}
+
+/* magic applies when text is hovered on */
+.magic:hover {
+  cursor: col-resize;
+  font-size: 25px;
+}
+button {
+  background-color: #FFABC9;
+  color: whitesmoke;
+  font-size: 15px;
+  width: 150px;
+  height: 30px;
+}
+
+/* styles slideshow */
+.slideshow {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* styles image in slide show */
+.slides img{
+  border-radius: 5%;
+}
+
+/* styles dots under slideshow */
+.dots {
+  text-align: center;
+}
+.dot {
+  text-align: center;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: rgb(141, 141, 141);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.8s ease;
+}
+
+/* button when user hovers on it */
+button:hover{
+  cursor: pointer;
+}
+
+/* box for drag and drop */
+#box {
+  width: 282px;
+  height: 340px;
+  padding: 10px;
+  border: 1px solid pink;
+  margin-left: 40%;
+  margin-right: 60%;
+}
+
+/* code for responsiveness */
+@media only screen and (max-width: 768px) {
+  /* changes all content to rows */
+  .firstcolumn, .secondcolumn, .thirdcolumn{
+    width: 100%;
+  }
+
+  /* displayed as rows */
+  .row {
+    display: flex;
+  }
+
+  /* all columns changed to row */
+  .column {
+    flex-direction: row;
+    width: 50%;
+  }
+}
