@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link href = "Week2.css" rel = "stylesheet" type = "text/css">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    </head>
+    <body>
+    <header>
+        <div class = "sis-code">
+            <h1>SIS CODE</h1>
+        </div>
+
+        <div class = "slogan">
+            <p>Empowering our sisters through technology</p>
+        </div>
+    </header>
+
+    <!-- navigation bar -->
+    <div id = "nav-bar">
+        <a id = "nav-link" href = "">Home</a>
+        <a id = "nav-link" href = "">Events</a>
+        <a id = "nav-link" href = "">Courses</a>
+        <a id = "nav-link" href = "">Contact</a>
+         <a id = "nav-link" href = "">About Us</a>
+      </div>
+
+    <article>
+      <!-- creates a row -->
+        <div class="row">
+          <!-- first column -->
+        <div class="column">
+        <section id = "introduction">
+            <h3>We are on a mission to close the gender gap within IT by teaching coding to women, 
+           getting women into the beauty of programming, and building an empire for women in technology. 
+           Most importantly, we believe, women can be empowered by technology!</h3>
+        </section>
+        </div>
+        <!-- second column -->
+        <div class="column">
+        <section id = "subscription">    
+          <!-- creates a form -->
+            <form id = "form">
+                <h3>Subscribe to our newsletter</h3>
+                <!-- creates input boxes -->
+                <label for = "name">Name:</label>
+                <input type = "text" id = "name" name = "name" required>
+                <br>
+                <label for = "email">Email:</label>
+                <input type = "text" id = "email" name = "email" required>
+                <br>
+                <label for = "phone">Phone:</label>
+                <input type = "text" id = "phone" name = "phone" required>
+                <br>
+                <label for = "marketing">Where did you hear about us?:</label>
+                <!-- creates drop down list -->
+                <input list = "heard-from" id = "marketing" name = "marketing" onchange = NewsletterChoice(this.value) required>
+                    <datalist id = "heard-from">
+                        <option value = "Facebook">
+                        <option value = "LinkedIn">
+                        <option value = "Instagram">
+                        <option value = "University">
+                        <option value = "Others">
+                    </datalist> <br>
+                    <!-- display text area when user clicks on others in the drop down menu -->
+                <textarea id="txtOther" class = "txtOther" rows = "4" cols = "30" style='display:none;' required>
+                </textarea>
+                <br class = "txtOther" style='display:none; text-align: center;'>
+                <hr>
+                <!-- creates submit button -->
+                <input type="submit" value = "SUBSCRIBE"></button>
+            </form>
+        </section>
+        </div>
+        </div>
+
+        <!-- creates an entire second row -->
+          <div id = "secondrow">
+            <!-- first column -->
+            <div class = "firstcolumn">
+              <!-- strong tag bolds the text -->
+            <p><strong>Here are the things you can do with Sis Code</strong></p>
+            <div>
+              <!-- creates a table -->
+                <table>
+                    <tr>
+                      <th>Events</th>
+                      <th>Description</th> 
+                      <th>When</th>
+                    </tr>
+                    <tr>
+                      <td><strong>Coding Bootcamp</strong></td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dictum. Egestas erat imperdiet sed euismod nisi porta lorem. Ac placerat vestibulum lectus mauris ultrices. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.</td>
+                      <td>30 August 2021</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Coding Workshop</strong></td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dictum. Egestas erat imperdiet sed euismod nisi porta lorem. Ac placerat vestibulum lectus mauris ultrices. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.</td>
+                      <td>1 September 2021</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+
+            <!-- creates second column -->
+            <div class = "secondcolumn">
+                <p><strong>Here are the things you should start doing:</strong></p>
+                <!-- creates ordered list -->
+                <ol>
+                    <li>Join us</li>
+                    <li>Book an event</li>
+                    <li>Start learning to code</li>
+                    <li>Build your own projects</li>
+                  </ol>
+
+                  <p><strong>Here are the things that empower women:</strong></p>
+                  <!-- creates unordered list -->
+                  <ul>
+                      <li>Boost her self esteem</li>
+                      <li>Shut down negativity</li>
+                      <li>Advocate for female</li>
+                    </ul>
+              </div>
+
+              <!-- creates third column -->
+            <div class = "thirdcolumn">
+                <p><strong>Photo of the day</strong></p>
+                <!-- embeds image -->
+                <img src = "https://source.unsplash.com/random">
+            </div>
+        </div>
+
+        <!-- creates third row -->
+        <div id = "thirdrow" style = "font-family: 'Jost';">
+          <!-- creates first column of third row -->
+            <div class = "firstcolumn">
+                <h3>You can calculate the average of 3 student numbers from here!</h3>
+                <!-- clicking on the button will prompt user to enter number of students and their respective scores to show the average -->
+                <button onclick="show_prompt()">Try it</button>
+            </div>
+            <!-- creates second column -->
+            <div class = "secondcolumn">
+                <h3>What is today's date?</h3>
+                <!-- clicking on this button shows today's date -->
+                <button onclick="show_date()">Check here</button>
+            </div>
+            <!-- vue instance for a to-do list -->
+            <section id = "app" class = "thirdcolumn">
+                <h1>{{title}}</h1>
+                <!-- list rendering -->
+                <div v-for = "item in list">
+                  <!-- uses event listener and data binding -->
+                  <input class = "checklist" 
+                         type = "checkbox" 
+                         v-on:change="toggle(item)"
+                         v-bind:checked="item.checked"
+                        />
+                  <!-- conditional rendering -->
+                  <del v-if="item.checked">
+                    {{item.text}}
+                  </del>
+                  <span v-else>
+                    {{item.text}}
+                  </span>
+                </div>
+            </section>
+        </div>
+
+        <!-- creates a slideshow, alt is an alternative text to be displayed if browser doesnt allow image to be shown -->
+        <div class = "slideshow">
+            <div class="slides fade">
+                <img src="https://source.unsplash.com/1600x900/?technology/" alt = "technology" style="width:100%">
+              </div>
+              
+              <div class="slides fade">
+                <img src="https://source.unsplash.com/1600x900/?computer/" alt = "computer" style="width:100%">
+              </div>
+              
+              <div class="slides fade">
+                <img src="https://source.unsplash.com/1600x900/?coding/" alt = "coding" style="width:100%">
+              </div>
+        </div>
+
+        <!-- create dots -->
+        <div class = "dots">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+          </div>
+
+          <!-- API which shows the coordinates of the user -->
+          <div class = "geo" style = "text-align: center; margin-top: 20px;">
+            <button onclick="getPosition()">Get your location</button>
+            <br>
+            <br>
+            <!-- API: the coordinate of the user is printed on this canvas -->
+            <canvas id="newCanvas" width="500" height="50" style="border:1px dotted #ffa7a7;">
+          </div>
+
+          <!-- API: embed youtube video -->
+          <div class = "APIs" style = "text-align: center;">
+            <h2>Why should girls code?</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/sPew_6zstM8"></iframe>
+          </div>
+
+          <!-- displays the founder -->
+        <section id = "founder">
+            <h2 style = "color: #ff3377;">About our Founder</h2>
+            <br>
+            <div class = "image-container">
+            <img src="https://lh3.googleusercontent.com/O85KUPr8x8-bEAV_j-1wSCUPvMsY0oz1jWbWHcZp35HYL7txPe6IxDf14W1LU6LTovbypsu3qZqWma0TiWnAITc3XwfesApNwh2LB8MA0dCbmlh9KZfclAtwmH85rDdXz0IR8BoE2Q=w600-h315-p-k">
+            </div>
+            <p class = "magic"> Ultimate potterhead,
+                but unlike Harry Potter <br>
+                who throws magic around, she wishes to throw influences in the IT industry!.  </p> 
+                <!-- link to external webpage -->
+            <a href="https://www.linkedin.com/in/betty-yuliani-841a681a5/"> <button type = "button">Visit My LinkedIn</button></a>
+        </section>
+
+        <!-- shows random API for the task -->
+        <div class = "random" style = "text-align: center;">
+          <br>
+          <!-- API: drag and drop -->
+          <div id = "box" ondrop="drop(event)" ondragover="dropAllowed(event)"></div>
+          <img id = "draggable" src="bulb.png" draggable="true" ondragstart="drag(event)">
+          <br>
+          <!-- plug in: audio from local computer -->
+          <audio controls> 
+            <source src="ambivert.mp3" type="audio/mpeg"> 
+          </audio> 
+          <br>
+          <!-- plug in: PDF from local computer -->
+          <embed src="lecture.pdf"  width="600" height="400"> 
+          <br><br>
+          <!-- embed powerpoint slide -->
+          <iframe src="https://onedrive.live.com/embed?cid=7B900E3BCA4B99B2&resid=7B900E3BCA4B99B2%2119173&authkey=ABX7G6Vpg0XmBAk&em=2" 
+          width="800" height="400"></iframe>
+        </div>
+
+     
+    </article>
+    <!-- cdn to import vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- import external javascript file$ -->
+    <script src = "Week2.js"></script>
+    </body>
+</html>
