@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "app">
+        <!-- declaratively render title  -->
+        <h1>{{title}}</h1>
+
+        <div id = "fullname">
+            <!-- form to let user input their full name -->
+            <label for = "username">Full name</label> <br>
+            <!-- to prevent syncing the input of name every time user input a character -->
+            <!-- will sync after the complete input (change of events) -->
+            <input type = "text" id = "fullname" placeholder = "Betty Yuliani" v-model.lazy = "fullname">
+            <div class = input>
+                <!-- displays user input -->
+                <p>Your fullname: {{ fullname }}</p>
+            </div>
+        </div>
+        <div id = "username">
+            <label for = "username">Username</label> <br>
+            <!-- remove whitespace from the value that is stored -->
+            <input type = "text" id = "username" placeholder = "byuliani" v-model.trim = "username">
+            <div class = input>
+                <!-- displays user input -->
+                <p>Your username: {{ username }}</p>
+            </div>
+        </div>
+
+        <div id = "password">
+            <label for = "password">Password</label> <br>
+            <!-- to prevent syncing the input of name every time user input a character -->
+            <!-- will sync after the complete input (change of events) -->
+            <input type = "password" id = "password" placeholder = "********" v-model.lazy = "password">
+            <div class = input>
+                <!-- displays password in hidden form -->
+                <p>Your password: {{ hidePassword() }}</p>
+            </div>
+        </div>
+
+        <div id = "age">
+            <label for = "age">Age</label> <br>
+            <!-- takes in only number, if user input character or string, it will be discarded -->
+            <input type = "text" id = "age" placeholder = "20" v-model.number = "age">
+            <div class = input>
+                <!-- displays the age -->
+                <p>Your age: {{ age }}</p>
+            </div>
+        </div>
+
+        <!-- event listener to verify that all fields have been inputted correctly -->
+        <button v-on:click="verify">Submit</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src = "main.js"></script>
+</body>
+</html>
+
