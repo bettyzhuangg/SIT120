@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Handling User Inputs</h1>
+
+    <!-- calculate BMI container -->
+    <div id="calculatebmi">
+        <h2>Calculate your BMI</h2>
+        <br>
+        <label for = "height">Input your height in meters:</label>
+        <input id="height" v-model="height">
+        <br>
+        <label for = "weight">Input your weight in kilograms:</label>
+        <input id="weightt" v-model="weight">
+        <br>
+        <button v-on:click="calculate()">Generate your BMI</button>
+        <div>
+            <h4>{{ BMI }}</h4>
+            <!-- conditional rendering to display different outputs depending on the BMI -->
+            <p v-if="BMI > 25">
+                You are overweight
+            </p>
+            <p v-else-if="BMI < 18 && BMI > 0">
+                You are underweight
+            </p>
+            <p v-else-if="BMI >= 18 && BMI <= 25">
+                Your BMI is normal
+            </p>
+        </div>
+
+    </div>
+
+    <!-- button clicker game -->
+    <div id="buttonclicker">
+        <h2>Click The Button</h2>
+
+        <div class="buttontoclick">
+            <button v-bind:onClick="increment_clicked_times">Click me</button>
+            <h4>{{clickedStatus}}</h4>
+            <h4>You have clicked {{clicked}} times</h4>
+            <button v-bind:onClick="restart_button">Reset</button>
+        </div>
+
+    </div>
+
+    <br>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src = "main.js"></script>
+</body>
+</html>
