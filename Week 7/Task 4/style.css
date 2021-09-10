@@ -1,0 +1,57 @@
+/* importing font that will be used in the project */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* =================STYLING FOR THE EVENTS DISPLAY STARTS HERE=============== */
+
+#app h1{
+    color: rgb(59, 26, 109);
+    font-family: "Raleway";
+    text-align: center;
+}
+
+/* styling for the event thumbnail's container */
+.event .event-image {
+    width: 30%;
+    float: left;
+    overflow-x: hidden;
+}
+
+/* sets the size for the event thumbnail */
+.event-image img {
+    width: 265px;
+    height: 158px;
+}
+
+/* sets the size of each event's container */
+.event {
+    padding: 5px;
+    height: 158px;
+    margin: 80px;
+    box-shadow: 5px 5px 10px rgb(196, 196, 196);
+}
+
+/* styles the text of the event's description */
+.event a{
+    margin-top: -10px;
+    width: 69%;
+    float: right;
+    color: black;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+/* styles that occur when the description is hovered by the user */
+.event .description:hover{
+    color: rgb(59, 26, 109);
+    text-decoration: underline;
+}
+
+/* sets font size for the title of the event */
+.description .title {
+    font-size: 18px;
+}
+
+/* sets different color for the event's prices */
+.description .price {
+    color: rgb(91,91,91);
+}

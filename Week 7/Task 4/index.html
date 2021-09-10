@@ -1,1 +1,48 @@
-dd
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- page title -->
+    <title>Events</title>
+    <!-- external css to style the index page -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- styling for the event page -->
+</head>
+<body>
+    <!-- container for the entire page content -->
+    <div id = "app">
+        <!-- declarative rendering from vue instance -->
+        <h1>{{ title }}</h1>
+        <!-- used the event component and pass in relevant p and img tags which will be rendered in the slot -->
+            <event>
+                <img slot = "image" src = "bootcamp.jpg">
+                <p slot = "title">Coding Bootcamp for Women</p>
+                <p slot = "date">29th February 2050 - 29th March 2050</p>
+                <p slot = "price">$1000</p>
+            </event>
+            <!-- used the event component and pass in relevant p and img tags which will be rendered in the slot -->
+            <event>
+                <img slot = "image" src = "workshop.jpg">
+                <p slot = "title">Coding Workshop for Women</p>
+                <p slot = "date">29th February 2050</p>
+                <p slot = "city">Melbourne, VIC 3000</p>
+                <p slot = "price">Free</p>
+            </event>
+            <!-- used the event component and pass in relevant p and img tags which will be rendered in the slot -->
+            <event>
+                <img slot = "image" src = "networking.jpg">
+                <p slot = "title">Networking Event for Women in Tech</p>
+                <p slot = "city">Melbourne, VIC 3000</p>
+                <p slot = "price">$50</p>
+            </event>
+        </div>
+    </div>
+        <!-- uses CDN to import vue module -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- linking to javascript file -->
+  <script src = "/main.js"> </script>
+</body>
+</html>
