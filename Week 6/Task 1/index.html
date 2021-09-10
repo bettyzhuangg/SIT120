@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- main container where vue instance will run at -->
+    <div id = "app">
+        <!-- declarative rendering for title -->
+        <h1>{{title}}</h1>
+
+        <div id = "username">
+            <label for = "username">Username</label> <br>
+            <!-- binds user input to username, which is a data in the vue instance -->
+            <input type = "text" id = "username" placeholder = "byuliani" v-model = "username">
+            <div class = input>
+                <!-- displays username with declarative rendering -->
+                <p>Your username: {{ username }}</p>
+            </div>
+        </div>
+
+        <div id = "password">
+            <label for = "password">Password</label> <br>
+            <!-- binds user input to password, which is a data in the vue instance -->
+            <input :type = "type" id = "password" placeholder = "********" v-model = "password">
+            <!-- button to toggle between user type -->
+            <button @click="showPassword">{{ btnText }}</button>
+            <div class = input>
+                <!-- displays password with declarative rendering -->
+                <p>Your password: {{ hidePassword() }}</p>
+            </div>
+        </div>
+
+        <div id = "email">
+            <label for = "email">Email</label> <br>
+            <!-- binds user input to email, which is a data in the vue instance -->
+            <input type = "text" id = "email" placeholder = "byuliani@deakin.edu.au" v-model = "email">
+            <div class = input>
+                <!-- displays email with declarative rendering -->
+                <p>Your email: {{ email }}</p>
+            </div>
+        </div>
+
+        <!-- event listener which calls the verify method to check if the user has correctly input all the fields-->
+        <button v-on:click="verify">Submit</button>
+    </div>
+    <!-- imports vue module through CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- external javascript -->
+    <script src = "main.js"></script>
+</body>
+</html>
