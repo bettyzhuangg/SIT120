@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div class="set-reminder">
+      <label for="event-type">Event</label>
+      <!-- allows the user to choose the event for which they would like to set reminder for -->
+      <select id="event-type" name="event-type" v-model="thisevent">
+        <option value="Networking Event">Networking Event</option>
+        <option value="Coding Bootcamp">Bootcamp</option>
+        <option value="Coding Workshop">Workshop</option>
+        <option value="Online Tutorial">Online Tutorial</option>
+      </select>
+
+      <!-- allows the user to set the date for when they would like to set reminder for -->
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" v-model="thisdate"/>
+
+      <!-- submit button -->
+      <div class = submission>
+        <button v-on:click = "addEvent" type="button" value = "done">submit</button>
+      </div>
+    </div>
+    <!-- renders a list of events based on what has been submitted by the user -->
+    <reminder v-for="x in events"
+              v-bind:date="x.date"
+              v-bind:event="x.event"></reminder>
+    <!-- prints out score based on the amount of reminders -->
+    <!-- as the component is rendered 3 times, the same thing will be displayed on the screen 3 times -->
+    <score :events = "events"></score>
+    <score :events = "events"></score>
+    <score :events = "events"></score>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
