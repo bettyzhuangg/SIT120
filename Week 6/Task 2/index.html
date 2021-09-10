@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "app">
+        <!-- declarative render title -->
+        <h3>{{ title }}</h3>
+        <!-- list of checkboxes -->
+        <input type="checkbox" id="pickles" value="Pickles" v-model="checkedVeg">
+        <label for = "pickles">Pickles</label>
+        <br>
+        <input type="checkbox" id="olives" value="Olives" v-model="checkedVeg">
+        <label for = "olives">Olives</label>
+        <br>
+        <input type="checkbox" id="tomato" value="Tomato" v-model="checkedVeg">
+        <label for = "tomato">Tomato</label>
+        <br>
+        <input type="checkbox" id="carrot" value="Carrot" v-model="checkedVeg">
+        <label for = "carrot">Carrot</label>
+        <br>
+        <input type="checkbox" id="avocado" value="Avocado" v-model="checkedVeg">
+        <label for = "avocado">Avocado</label>
+        <br>
+        <input type="checkbox" id="cucumber" value="Cucumber" v-model="checkedVeg">
+        <label for = "cucumber">Cucumber</label>
+        <br>
+        <input type="checkbox" id="spinach" value="Spinach" v-model="checkedVeg">
+        <label for = "spinach">Spinach</label>
+        <br>
+        <input type="checkbox" id="capsicum" value="Capsicum" v-model="checkedVeg">
+        <label for = "capsicum">Capsicum</label>
+        <br>
+        <input type="checkbox" id="lettuce" value="Lettuce" v-model="checkedVeg">
+        <label for = "lettuce">Lettuce</label>
+        <br>
+        <input type="checkbox" id="onions" value="Onions" v-model="checkedVeg">
+        <label for = "onions">Onions</label>
+
+        <div>
+            <!-- displays all the options that users have chosen -->
+            <p>Veg: {{checkedVeg}}</p>
+        </div>
+    </div>
+    <!-- imports vue model through CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- external javascript -->
+    <script src="main.js"></script>
+</body>
+</html>
+
+
