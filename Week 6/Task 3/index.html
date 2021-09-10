@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "bread">
+        <!-- declaratively render title -->
+        <h3>{{title}}</h3>
+        <select v-model="selected">
+            <!-- first option is disabled, used to just display the title of the options -->
+            <option disabled value="">Select your Bread</option>
+            <!-- list rendering to display the options array -->
+            <!-- binds the option that user has selected as the value of this option form -->
+            <option v-for="option in options" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+        <!-- displays user's selection with declarative rendering -->
+        <!-- at this point, the selected variable in the vue instance should be filled with v bind -->
+        <span>Selected: {{ selected }}</span>
+    </div>
+
+    <div id = "cheese">
+        <h3>{{title}}</h3>
+        <select v-model="selected">
+            <!-- first option is disabled, used to just display the title of the options -->
+            <option disabled value="">Select your Cheese</option>
+            <!-- list rendering to display the options array -->
+            <!-- binds the option that user has selected as the value of this option form -->
+            <option v-for="option in options" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+        <!-- at this point, the selected variable in the vue instance should be filled with v bind -->
+        <span>Selected: {{ selected }}</span>
+    </div>
+
+    <br><br>
+    <button type ="submit">Submit</button>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src = "main.js"></script>
+</body>
+</html>
+
+
